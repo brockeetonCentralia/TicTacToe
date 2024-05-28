@@ -3,4 +3,3 @@ Link to Project Proposal: https://docs.google.com/document/d/13XQL13Xx6Efktkhbf-
 
 Kanban board: https://trello.com/b/ZhEtCXUJ/tic-tac-toe
  
-User stories: Tic -Tac-Toe User Stories.docx
