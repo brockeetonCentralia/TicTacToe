@@ -1,0 +1,6 @@
+.vs/
+TicTacToe/obj/
+TicTacToe/bin/
+TestResults/
+TicTacToeTests/bin
+TicTacToeTests/obj
