@@ -175,16 +175,22 @@ namespace TicTacToe
         {
             this.Controls.Clear();
 
-            if (stateConditionsManager.hasWinner = true)
-            {
-                stateConditionsManager.hasWinner = false;
-            }
-
+            stateConditionsManager.hasWinner = false;
             stateTurnManager.ResetTurn();
             stateTurnQueue.ResetTurnQueue();
 
             this.InitializeComponent();
             this.SetGameState();
+        }
+
+        private void Player1Score_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Player2Score_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
