@@ -7,6 +7,9 @@ namespace TicTacToe
         public Button[] btnCells { get; set; }
         public chrPlayer[] chrPlayers { get; set; }
 
+        private int xWins = 0;
+        private int yWins = 0;
+
         public frmGameboard()
         {
             InitializeComponent();
@@ -111,9 +114,11 @@ namespace TicTacToe
             if (stateConditionsManager.DetermineWinner(currentTurn, player.playerSymbol, out headerTxt))
             {
                 winner = player;
+
+
+
                 return true;
             }
-
             return false;
         }
 
@@ -123,7 +128,37 @@ namespace TicTacToe
             foreach (int winningCell in stateConditionsManager.winningCells)
                 btnCells[winningCell].ForeColor = winnerColor;
 
+            if (winnerColor == Color.Green)
+            {
+                xWins++;
+                UpdateWinLabels();
+            }
+            else
+            {
+                yWins++;
+                UpdateWinLabels();
+            }
+
             return headerTxt;
+        }
+        private void UpdateWinLabels()
+        {
+            PlayerOneScore.Text = xWins.ToString();
+            PlayerTwoScore.Text = yWins.ToString();
+        }
+
+        private void ResetBoard()
+        {
+            foreach (var btnCell in btnCells)
+            {
+                btnCell.Text = "";
+                btnCell.ForeColor = Color.Black;
+                btnCell.Enabled = true;
+            }
+            stateConditionsManager.hasWinner = false;
+            stateTurnManager.ResetTurn();
+            stateTurnQueue.ResetTurnQueue();
+            InitializeFirstTurn();
         }
 
         private void btnCell1_Click(object sender, EventArgs e)
@@ -173,24 +208,22 @@ namespace TicTacToe
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-
-            stateConditionsManager.hasWinner = false;
-            stateTurnManager.ResetTurn();
-            stateTurnQueue.ResetTurnQueue();
-
-            this.InitializeComponent();
-            this.SetGameState();
+            ResetBoard();
         }
-
-        private void Player1Score_TextChanged(object sender, EventArgs e)
+        private void PlayerOneScore_TextChanged(object sender, EventArgs e)
         {
-
+            UpdateWinLabels();
         }
-
-        private void Player2Score_TextChanged(object sender, EventArgs e)
+        private void PlayerTwoScore_TextChanged(object sender, EventArgs e)
         {
-
+            UpdateWinLabels();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PlayerOneScore.Clear();
+            PlayerTwoScore.Clear();
+        }
+
     }
 }

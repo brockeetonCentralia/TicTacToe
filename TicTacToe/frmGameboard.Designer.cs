@@ -39,8 +39,11 @@
             btnCell9 = new Button();
             txtHeader = new TextBox();
             resetBtn = new Button();
-            Player1Score = new TextBox();
-            Player2Score = new TextBox();
+            PlayerTwoScore = new RichTextBox();
+            PlayerOneScore = new RichTextBox();
+            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnCell1
@@ -164,21 +167,51 @@
             resetBtn.UseVisualStyleBackColor = true;
             resetBtn.Click += resetBtn_Click;
             // 
-            // Player1Score
+            // PlayerTwoScore
             // 
-            Player1Score.Location = new Point(327, 655);
-            Player1Score.Name = "Player1Score";
-            Player1Score.Size = new Size(49, 31);
-            Player1Score.TabIndex = 11;
-            Player1Score.TextChanged += Player1Score_TextChanged;
+            PlayerTwoScore.Location = new Point(349, 639);
+            PlayerTwoScore.Name = "PlayerTwoScore";
+            PlayerTwoScore.Size = new Size(58, 52);
+            PlayerTwoScore.TabIndex = 11;
+            PlayerTwoScore.Text = "";
+            PlayerTwoScore.TextChanged += PlayerTwoScore_TextChanged;
             // 
-            // Player2Score
+            // PlayerOneScore
             // 
-            Player2Score.Location = new Point(166, 655);
-            Player2Score.Name = "Player2Score";
-            Player2Score.Size = new Size(44, 31);
-            Player2Score.TabIndex = 12;
-            Player2Score.TextChanged += Player2Score_TextChanged;
+            PlayerOneScore.Location = new Point(190, 639);
+            PlayerOneScore.Name = "PlayerOneScore";
+            PlayerOneScore.Size = new Size(60, 52);
+            PlayerOneScore.TabIndex = 12;
+            PlayerOneScore.Text = "";
+            PlayerOneScore.TextChanged += PlayerOneScore_TextChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(460, 653);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 29);
+            button1.TabIndex = 13;
+            button1.Text = "RESET SCORE";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(206, 702);
+            label1.Name = "label1";
+            label1.Size = new Size(30, 23);
+            label1.TabIndex = 14;
+            label1.Text = "X's";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(360, 700);
+            label2.Name = "label2";
+            label2.Size = new Size(31, 23);
+            label2.TabIndex = 15;
+            label2.Text = "O's";
             // 
             // frmGameboard
             // 
@@ -186,8 +219,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(740, 737);
-            Controls.Add(Player2Score);
-            Controls.Add(Player1Score);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(button1);
+            Controls.Add(PlayerOneScore);
+            Controls.Add(PlayerTwoScore);
             Controls.Add(resetBtn);
             Controls.Add(txtHeader);
             Controls.Add(btnCell9);
@@ -225,7 +261,10 @@
         public  Button btnCell9;
         public TextBox txtHeader;
         private Button resetBtn;
-        private TextBox Player1Score;
-        private TextBox Player2Score;
+        private RichTextBox PlayerTwoScore;
+        private RichTextBox PlayerOneScore;
+        private Button button1;
+        private Label label1;
+        private Label label2;
     }
 }
