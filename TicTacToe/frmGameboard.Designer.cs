@@ -41,7 +41,7 @@
             resetBtn = new Button();
             PlayerTwoScore = new RichTextBox();
             PlayerOneScore = new RichTextBox();
-            button1 = new Button();
+            resetScore = new Button();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -185,15 +185,15 @@
             PlayerOneScore.Text = "";
             PlayerOneScore.TextChanged += PlayerOneScore_TextChanged;
             // 
-            // button1
+            // resetScore
             // 
-            button1.Location = new Point(460, 653);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 29);
-            button1.TabIndex = 13;
-            button1.Text = "RESET SCORE";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            resetScore.Location = new Point(460, 653);
+            resetScore.Name = "resetScore";
+            resetScore.Size = new Size(150, 29);
+            resetScore.TabIndex = 13;
+            resetScore.Text = "RESET SCORE";
+            resetScore.UseVisualStyleBackColor = true;
+            resetScore.Click += resetScore_Click;
             // 
             // label1
             // 
@@ -221,7 +221,7 @@
             ClientSize = new Size(740, 737);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(resetScore);
             Controls.Add(PlayerOneScore);
             Controls.Add(PlayerTwoScore);
             Controls.Add(resetBtn);
@@ -263,7 +263,7 @@
         private Button resetBtn;
         private RichTextBox PlayerTwoScore;
         private RichTextBox PlayerOneScore;
-        private Button button1;
+        private Button resetScore;
         private Label label1;
         private Label label2;
     }

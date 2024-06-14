@@ -219,11 +219,11 @@ namespace TicTacToe
             UpdateWinLabels();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void resetScore_Click(object sender, EventArgs e)
         {
-            PlayerOneScore.Clear();
-            PlayerTwoScore.Clear();
+            xWins = 0;
+            yWins = 0;
+            UpdateWinLabels();
         }
-
     }
 }
